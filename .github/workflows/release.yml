@@ -1,0 +1,54 @@
+# Builds a signed Windows installer and publishes a GitHub Release, with
+# the CHANGELOG section as its notes and the latest.json Playnest's
+# updater reads. Start it by pushing a tag that matches the app version:
+#
+#   git tag v0.2.3 && git push origin v0.2.3
+#
+# Needs the repository secret TAURI_SIGNING_PRIVATE_KEY (the contents of
+# your playnest.key). See README → "Releasing on GitHub".
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: "src-tauri -> target"
+
+      - run: npm ci
+
+      - name: Check version and read the changelog
+        id: notes
+        shell: bash
+        run: node scripts/ci-notes.mjs "$GITHUB_REF_NAME"
+
+      - name: Build, sign and publish
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: ${{ github.ref_name }}
+          releaseName: Playnest ${{ steps.notes.outputs.version }}
+          releaseBody: ${{ steps.notes.outputs.body }}
+          releaseDraft: false
+          prerelease: false
+          updaterJsonPreferNsis: true

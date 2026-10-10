@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Playnest",
+  "version": "0.2.3",
+  "identifier": "com.playnest.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Playnest",
+        "width": 480,
+        "height": 820,
+        "minWidth": 420,
+        "minHeight": 560,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$APPDATA/downloads/**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDY3QkQ5RDgwREIxRjcxNDAKUldSQWNSL2JnSjI5WndraEVmMTdvekM4NWFxV3JUWkdkbk9Gdng4U1hHd0RDbDQ0VDBCTFdEcloK",
+      "endpoints": [
+        "https://github.com/SkywalkerPZ/playnest/releases/latest/download/latest.json",
+        "https://playnest-k7q2m9.netlify.app/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}

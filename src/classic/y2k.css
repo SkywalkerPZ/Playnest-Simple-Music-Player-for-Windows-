@@ -1,0 +1,332 @@
+/* "Y2K chrome" skin: brushed-silver capsules on a deep blue backdrop, blue
+ * gel buttons, a glowing cyan display, built around the logo's blue
+ * (#2563eb). Colours first, then the shape changes that set it apart from
+ * the square classic skins. Applied with <html class="skin-y2k">. */
+
+.skin-y2k {
+  --cw-font-pixel: "Orbitron", Tahoma, sans-serif;
+
+  --cw-frame-1: #fdfeff;
+  --cw-frame-2: #d3dcea;
+  --cw-frame-3: #aebbd0;
+  --cw-hi: #ffffff;
+  --cw-lo: #0a1a3a;
+  --cw-title-1: #8cc4ff;
+  --cw-title-2: #1f5fd6;
+  --cw-title-text: #ffffff;
+  --cw-title-groove: transparent;
+  --cw-lcd-bg: #041029;
+  --cw-lcd-fg: #6fe0ff;
+  --cw-lcd-dim: #0d2b55;
+  --cw-lcd-text: #aeeeff;
+  --cw-list-bg: #030c22;
+  --cw-list-fg: #86ccff;
+  --cw-list-current: #ffffff;
+  --cw-list-select: #2563eb;
+  --cw-list-dim: #4a78b5;
+  --cw-btn-1: #ffffff;
+  --cw-btn-2: #dbe4f0;
+  --cw-btn-3: #a9b8ce;
+  --cw-btn-text: #0d2c6b;
+  --cw-btn-hi: #ffffff;
+  --cw-btn-lo: #7084a8;
+  --cw-led-on: #4fd6ff;
+  --cw-led-off: #97a8c2;
+  --cw-thumb-1: #bfe0ff;
+  --cw-thumb-2: #1f5fd6;
+  --cw-groove: #0a1a3a;
+  --cw-text: #0d2c6b;
+  --cw-text-dim: #36507f;
+
+  --cw-vis-mid: #b9f1ff;
+  --cw-vis-top: #ffffff;
+  --cw-vis-peak: #ff6ad5;
+  --cw-logo-bg: #2563eb;
+  --cw-logo-fg: #ffffff;
+  --cw-logo-gloss: rgb(255 255 255 / 0.28);
+
+  /* Library pages */
+  --ink-950: 4 10 28;
+  --ink-900: 8 18 44;
+  --ink-800: 14 30 66;
+  --ink-700: 26 48 98;
+  --ink-600: 40 70 132;
+  --mist-100: 234 243 255;
+  --mist-300: 178 206 242;
+  --mist-500: 128 160 208;
+  --ember: 77 166 255;
+  --ember-dim: 37 99 235;
+  --ember-soft: 166 214 255;
+}
+
+/* ---------- backdrop and panels ---------- */
+
+.skin-y2k .cw-root {
+  background:
+    radial-gradient(90% 60% at 20% 0%, rgb(80 150 255 / 0.35), transparent 70%),
+    radial-gradient(70% 50% at 100% 100%, rgb(0 200 255 / 0.18), transparent 70%),
+    linear-gradient(180deg, #0c2a66 0%, #06163a 55%, #030a1f 100%);
+}
+
+.skin-y2k .cw-stack {
+  background: transparent;
+  gap: 5px;
+  padding: 5px;
+}
+
+.skin-y2k .cw-window {
+  border-radius: 16px;
+  border: 1px solid #6a7ea3;
+  padding: 0 9px 9px;
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 0) 0%, rgb(255 255 255 / 0.35) 50%, rgb(255 255 255 / 0) 100%),
+    linear-gradient(180deg, #fdfeff 0%, #e4ebf5 36%, #c2cee0 50%, #d4deea 64%, #eef3f9 100%);
+  box-shadow:
+    inset 0 1px 0 #ffffff,
+    inset 0 -2px 3px rgb(70 95 140 / 0.25),
+    0 3px 10px rgb(0 0 0 / 0.5);
+}
+
+.skin-y2k .cw-library {
+  margin: 5px 5px 5px 0;
+}
+
+/* ---------- title bar: a blue gel capsule ---------- */
+
+.skin-y2k .cw-titlebar {
+  height: 18px;
+  margin: 6px -3px 7px;
+  padding: 0 4px 0 5px;
+  border-radius: 9px;
+  border: 1px solid #103f9e;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.75) 0%, rgb(255 255 255 / 0.2) 48%, rgb(255 255 255 / 0) 52%),
+    linear-gradient(180deg, #5da0ff 0%, #2563eb 55%, #3d8dff 100%);
+  box-shadow:
+    inset 0 -2px 4px rgb(120 220 255 / 0.55),
+    0 1px 2px rgb(0 30 90 / 0.35);
+}
+.skin-y2k .cw-titlebar-groove {
+  background: none;
+}
+.skin-y2k .cw-titlebar-text {
+  font-weight: 700;
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  text-shadow: 0 1px 1px rgb(0 35 110 / 0.85);
+}
+.skin-y2k .cw-titlebar-logo {
+  filter: drop-shadow(0 0 1px rgb(255 255 255 / 0.9));
+}
+.skin-y2k .cw-titlebar-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgb(0 30 90 / 0.65);
+  color: #0d2c6b;
+  background: radial-gradient(circle at 50% 28%, #ffffff 0 22%, #d4e7ff 48%, #7fb2f5 100%);
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.3);
+}
+.skin-y2k .cw-titlebar-btn:active {
+  background: radial-gradient(circle at 50% 70%, #ffffff 0 18%, #9cc6ff 50%, #3f7fe0 100%);
+}
+
+/* ---------- glowing display ---------- */
+
+.skin-y2k .cw-lcd {
+  border-radius: 8px;
+  border: 1px solid #1d3564;
+  background:
+    linear-gradient(180deg, rgb(140 200 255 / 0.16) 0%, rgb(140 200 255 / 0.05) 46%, rgb(140 200 255 / 0) 50%),
+    var(--cw-lcd-bg);
+  box-shadow:
+    inset 0 2px 6px rgb(0 0 0 / 0.75),
+    0 1px 0 #ffffff;
+}
+.skin-y2k .cw-lcd-text,
+.skin-y2k .cw-tag[data-on="true"] {
+  text-shadow: 0 0 6px rgb(111 224 255 / 0.75);
+}
+.skin-y2k .cw-lcd svg {
+  filter: drop-shadow(0 0 3px rgb(111 224 255 / 0.6));
+}
+.skin-y2k .cw-tag {
+  font-size: 7px;
+}
+
+/* ---------- pill buttons ---------- */
+
+.skin-y2k .cw-btn {
+  height: 18px;
+  padding: 0 7px;
+  border-radius: 999px;
+  border: 1px solid #7488ad;
+  font-weight: 700;
+  font-size: 7.5px;
+  letter-spacing: 0.08em;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.95) 0%, rgb(255 255 255 / 0.5) 48%, rgb(255 255 255 / 0) 52%),
+    linear-gradient(180deg, #edf2f9 0%, #b5c4da 100%);
+  box-shadow: 0 1px 1px rgb(0 20 60 / 0.3);
+}
+.skin-y2k .cw-btn:active:not(:disabled),
+.skin-y2k .cw-btn[data-down="true"] {
+  background: linear-gradient(180deg, #a3b6d2 0%, #dfe7f2 100%);
+  box-shadow: inset 0 1px 3px rgb(0 20 60 / 0.45);
+}
+.skin-y2k .cw-toggle::before {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border-color: rgb(0 30 80 / 0.45);
+}
+
+/* Transport: blue gel lozenges with white icons. */
+.skin-y2k .cw-transport {
+  height: 24px;
+  min-width: 29px;
+  padding: 0;
+  color: #ffffff;
+  border-color: #0f3d9c;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.7) 0%, rgb(255 255 255 / 0.18) 48%, rgb(255 255 255 / 0) 52%),
+    linear-gradient(180deg, #4d97ff 0%, #1f58d0 100%);
+  box-shadow:
+    inset 0 -3px 5px rgb(110 225 255 / 0.55),
+    0 1px 2px rgb(0 20 80 / 0.5);
+}
+.skin-y2k .cw-transport svg {
+  filter: drop-shadow(0 1px 0 rgb(0 30 100 / 0.6));
+}
+.skin-y2k .cw-transport:active:not(:disabled),
+.skin-y2k .cw-transport[data-down="true"] {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.25) 0%, rgb(255 255 255 / 0) 50%),
+    linear-gradient(180deg, #1a4cb6 0%, #3f88f2 100%);
+  box-shadow: inset 0 2px 4px rgb(0 10 50 / 0.55);
+}
+
+/* ---------- sliders ---------- */
+
+.skin-y2k .cw-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  border: 1px solid #1d3564;
+  background:
+    linear-gradient(90deg, #3fd0ff 0, #2563eb var(--fill), transparent var(--fill)) 0 0 / 100% 100% no-repeat,
+    var(--cw-groove);
+  box-shadow:
+    inset 0 1px 2px rgb(0 0 0 / 0.6),
+    0 1px 0 #ffffff;
+  opacity: 1;
+}
+.skin-y2k .cw-range::-webkit-slider-thumb {
+  width: 18px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 999px;
+  border: 1px solid #0e3a8f;
+  background: radial-gradient(ellipse at 50% 25%, #ffffff 0 18%, #a8d4ff 45%, #1f5fd6 100%);
+  box-shadow: 0 1px 2px rgb(0 20 70 / 0.5);
+}
+.skin-y2k .cw-seek::-webkit-slider-thumb {
+  width: 30px;
+}
+.skin-y2k .cw-range::-moz-range-track {
+  border-radius: 3px;
+}
+.skin-y2k .cw-range::-moz-range-progress {
+  border-radius: 3px;
+  background: linear-gradient(90deg, #3fd0ff, #2563eb);
+}
+.skin-y2k .cw-range::-moz-range-thumb {
+  border-radius: 999px;
+  background: radial-gradient(ellipse at 50% 25%, #ffffff 0 18%, #a8d4ff 45%, #1f5fd6 100%);
+}
+
+.skin-y2k .cw-vslider-track {
+  border-radius: 3px;
+}
+.skin-y2k .cw-vslider-fill {
+  border-radius: 1px;
+  box-shadow: 0 0 4px var(--cw-lcd-fg);
+}
+.skin-y2k .cw-vslider-thumb {
+  height: 9px;
+  border-radius: 999px;
+  border: 1px solid #0e3a8f;
+  background: radial-gradient(ellipse at 50% 25%, #ffffff 0 18%, #a8d4ff 45%, #1f5fd6 100%);
+  box-shadow: 0 1px 2px rgb(0 20 70 / 0.5);
+}
+
+/* ---------- playlist, menus, library ---------- */
+
+.skin-y2k .cw-list {
+  border-radius: 9px;
+  border-color: #1d3564;
+  box-shadow:
+    inset 0 2px 6px rgb(0 0 0 / 0.65),
+    0 1px 0 #ffffff;
+}
+.skin-y2k .cw-list-row[aria-selected="true"],
+.skin-y2k .cw-library-nav-item[aria-current="page"] {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.3) 0%, rgb(255 255 255 / 0) 55%),
+    linear-gradient(180deg, #3f8cff, #1d56cc);
+}
+.skin-y2k .cw-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #8ec5ff, #2563eb);
+}
+
+.skin-y2k .cw-menu {
+  border-radius: 11px;
+  padding: 4px;
+  border-color: #7488ad;
+  background: linear-gradient(180deg, #f7faff, #e3ebf6);
+  box-shadow: 0 8px 22px rgb(0 10 40 / 0.55);
+}
+.skin-y2k .cw-menu button {
+  border-radius: 7px;
+}
+.skin-y2k .cw-menu button:hover:not(:disabled),
+.skin-y2k .cw-menu button:focus-visible {
+  background: linear-gradient(180deg, #4d97ff, #1f58d0);
+}
+
+.skin-y2k .cw-library-body {
+  border-radius: 10px;
+  overflow: hidden;
+  border-color: #1d3564;
+  box-shadow:
+    inset 0 2px 6px rgb(0 0 0 / 0.5),
+    0 1px 0 #ffffff;
+}
+.skin-y2k .cw-library-nav-item {
+  border-radius: 6px;
+  margin: 0 4px;
+  width: calc(100% - 8px);
+}
+.skin-y2k .cw-library-content [class*="rounded"] {
+  border-radius: 12px;
+}
+.skin-y2k .cw-library-content [class*="rounded-full"] {
+  border-radius: 999px;
+}
+.skin-y2k .cw-library-content h1 {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: linear-gradient(180deg, #ffffff 0%, #bfe3ff 50%, #6fb4ff 51%, #d9efff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skin-y2k .cw-toast {
+  border-radius: 12px;
+  left: 14px;
+  width: 452px;
+  box-shadow:
+    0 0 12px rgb(111 224 255 / 0.35),
+    0 4px 12px rgb(0 0 0 / 0.5);
+}

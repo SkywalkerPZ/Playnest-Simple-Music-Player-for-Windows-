@@ -1,0 +1,155 @@
+/* Classic-layout skins.
+ *
+ * Each skin sets two groups of variables:
+ *  --cw-*        the retro chrome (frames, LCD, buttons, playlist)
+ *  --ink/mist/ember tokens, which recolour the reused library pages
+ *                (search, liked, stats, settings…) to match.
+ * Applied as classes on <html>: "layout-classic skin-<name>". */
+
+.layout-classic {
+  --font-sans: Tahoma, Verdana, "Segoe UI";
+  --font-display: "Silkscreen", Tahoma;
+  --cw-font-lcd: "VT323", Consolas, "Courier New", monospace;
+  --cw-font-pixel: "Silkscreen", Tahoma, sans-serif;
+}
+
+/* 1. Classic green: green metallic frame, silver buttons, green LCD. */
+.skin-green {
+  --cw-frame-1: #74a262;
+  --cw-frame-2: #43733a;
+  --cw-frame-3: #2a4e25;
+  --cw-hi: #aad896;
+  --cw-lo: #142c10;
+  --cw-title-1: #bcdcad;
+  --cw-title-2: #6f9c60;
+  --cw-title-text: #f4ffee;
+  --cw-title-groove: #36592d;
+  --cw-lcd-bg: #0a160a;
+  --cw-lcd-fg: #4dff32;
+  --cw-lcd-dim: #153816;
+  --cw-lcd-text: #a4ff94;
+  --cw-list-bg: #000000;
+  --cw-list-fg: #00e000;
+  --cw-list-current: #ffffff;
+  --cw-list-select: #1b3aa0;
+  --cw-list-dim: #0b7a0b;
+  --cw-btn-1: #f4f7f2;
+  --cw-btn-2: #bac3b6;
+  --cw-btn-3: #8c968a;
+  --cw-btn-text: #1b2819;
+  --cw-btn-hi: #ffffff;
+  --cw-btn-lo: #4c5646;
+  --cw-led-on: #5dff3d;
+  --cw-led-off: #1e3a1a;
+  --cw-thumb-1: #f4f7f2;
+  --cw-thumb-2: #a6b0a2;
+  --cw-groove: #0d1d0b;
+  --cw-text: #eaffe3;
+  --cw-text-dim: #b8dcaa;
+
+  --ink-950: 10 20 10;
+  --ink-900: 14 28 13;
+  --ink-800: 20 38 18;
+  --ink-700: 31 58 28;
+  --ink-600: 45 86 41;
+  --mist-100: 216 255 206;
+  --mist-300: 158 232 150;
+  --mist-500: 110 180 102;
+  --ember: 77 255 50;
+  --ember-dim: 55 200 36;
+  --ember-soft: 170 255 150;
+}
+
+/* 2. Black & green: black brushed frame, green text and sliders. */
+.skin-black {
+  --cw-frame-1: #3b3b3b;
+  --cw-frame-2: #242424;
+  --cw-frame-3: #121212;
+  --cw-hi: #6b6b6b;
+  --cw-lo: #000000;
+  --cw-title-1: #4c4c4c;
+  --cw-title-2: #262626;
+  --cw-title-text: #dadada;
+  --cw-title-groove: #151515;
+  --cw-lcd-bg: #000000;
+  --cw-lcd-fg: #36ff36;
+  --cw-lcd-dim: #0b280b;
+  --cw-lcd-text: #8cff8c;
+  --cw-list-bg: #000000;
+  --cw-list-fg: #34f034;
+  --cw-list-current: #ffffff;
+  --cw-list-select: #1c4a1c;
+  --cw-list-dim: #137a13;
+  --cw-btn-1: #5c5c5c;
+  --cw-btn-2: #3a3a3a;
+  --cw-btn-3: #242424;
+  --cw-btn-text: #3cff3c;
+  --cw-btn-hi: #858585;
+  --cw-btn-lo: #000000;
+  --cw-led-on: #36ff36;
+  --cw-led-off: #0f2d0f;
+  --cw-thumb-1: #6cf06c;
+  --cw-thumb-2: #1e8c1e;
+  --cw-groove: #050505;
+  --cw-text: #d4d4d4;
+  --cw-text-dim: #8e8e8e;
+
+  --ink-950: 0 0 0;
+  --ink-900: 10 10 10;
+  --ink-800: 22 22 22;
+  --ink-700: 36 36 36;
+  --ink-600: 58 58 58;
+  --mist-100: 214 255 214;
+  --mist-300: 143 224 143;
+  --mist-500: 96 168 96;
+  --ember: 54 255 54;
+  --ember-dim: 40 200 40;
+  --ember-soft: 170 255 170;
+}
+
+/* 3. Midnight blue: slate-blue frame, green-on-black playlist. */
+.skin-midnight {
+  --cw-frame-1: #525b86;
+  --cw-frame-2: #373d61;
+  --cw-frame-3: #232741;
+  --cw-hi: #8089bd;
+  --cw-lo: #11142a;
+  --cw-title-1: #636c9b;
+  --cw-title-2: #373d61;
+  --cw-title-text: #e2e7ff;
+  --cw-title-groove: #242945;
+  --cw-lcd-bg: #000006;
+  --cw-lcd-fg: #2ee62e;
+  --cw-lcd-dim: #0b270e;
+  --cw-lcd-text: #93f293;
+  --cw-list-bg: #000000;
+  --cw-list-fg: #2ee62e;
+  --cw-list-current: #ffffff;
+  --cw-list-select: #2d3a8c;
+  --cw-list-dim: #127512;
+  --cw-btn-1: #7c84ae;
+  --cw-btn-2: #4f5781;
+  --cw-btn-3: #363c5e;
+  --cw-btn-text: #eef0ff;
+  --cw-btn-hi: #aab2e0;
+  --cw-btn-lo: #14172d;
+  --cw-led-on: #3cff3c;
+  --cw-led-off: #1d2340;
+  --cw-thumb-1: #cbd1f2;
+  --cw-thumb-2: #7a82ad;
+  --cw-groove: #0a0c1b;
+  --cw-text: #e2e7ff;
+  --cw-text-dim: #9ca4d3;
+
+  --ink-950: 18 20 40;
+  --ink-900: 24 27 52;
+  --ink-800: 32 36 70;
+  --ink-700: 45 50 96;
+  --ink-600: 61 67 120;
+  --mist-100: 230 234 255;
+  --mist-300: 174 182 232;
+  --mist-500: 132 141 198;
+  --ember: 62 232 62;
+  --ember-dim: 45 180 45;
+  --ember-soft: 170 250 170;
+}

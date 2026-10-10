@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default (modern) palette. Values are RGB channels so Tailwind's opacity
+ * modifiers (bg-ember/10) keep working; skins override these. */
+:root {
+  --ink-950: 14 16 22;
+  --ink-900: 18 20 28;
+  --ink-800: 26 29 41;
+  --ink-700: 35 38 54;
+  --ink-600: 44 48 66;
+  --mist-100: 238 240 245;
+  --mist-300: 196 200 214;
+  --mist-500: 154 160 180;
+  --ember: 255 111 60;
+  --ember-dim: 217 85 42;
+  --ember-soft: 255 180 148;
+  --font-sans: "Inter";
+  --font-display: "Space Grotesk";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: rgb(var(--ink-950));
+  color: rgb(var(--mist-100));
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--ink-600));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--ember));
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgb(var(--ember));
+  outline-offset: 2px;
+}
